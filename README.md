@@ -4,7 +4,7 @@ How I am able to build projects in 2 days or less.
 
 I build my apps using Amazon (AWS), Amplify, Serverless, Reacts.js, Bootstrap, and npm.
 
-If you need any help, do not hesitate to contact. 
+If you need any help, do not hesitate to contact me. 
 
 ## Projects built in 2 days
 * <a href="https://www.yebana.com"> www.yebana.com </a>
@@ -45,7 +45,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 - `REF: https://serverless-stack.com/chapters/setup-the-serverless-framework.html`
 
-`Step 3` : Create a project useing serverless NodeJS starter with : `serverless install --url https://github.com/AnomalyInnovations/serverless-nodejs-starter --name xyz-app-api`
+`Step 3` : Create a project using serverless NodeJS starter with : `serverless install --url https://github.com/AnomalyInnovations/serverless-nodejs-starter --name xyz-app-api`
 
  * ( `"xyz"` is the name of your project. For example, if your project name is facebook. You will name it `facebook-app-api` )
 
