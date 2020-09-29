@@ -13,11 +13,13 @@ If you need any help, do not hesitate to contact.
 
 ## How to set up your project
 
-what you will need to do is set up your :
-* Backend project 
-* Frontend project
+All you need is a :
 
-## Setting up your Backend project 
+* Backend folder 
+
+* Frontend folder
+
+## Setting up your Backend project folder
 
 To set up your backend follow the steps listed below to the "T." Do not skip steps!!! 
 
@@ -30,6 +32,8 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
   - A <a href="https://github.com/"> Github account </a>.
   
   - Visual Studio (Latest Version)
+  
+  - <a href="https://seed.run/"> Seeds account </a> for your Backend CI/CD
 
 `Step 0` : Create IAM user on AWS (preferably done in `step 8`)
 
