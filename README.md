@@ -17,7 +17,7 @@ what you will need to do is set up your :
 * Backend project 
 * Frontend project
 
-### Setting up your Backend project 
+## Setting up your Backend project 
 
 To set up your backend follow the steps listed below to the "T." Do not skip steps!!! 
 
@@ -28,6 +28,8 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
   - All codes need to be pasted in a `command prompt` or `Windows Powershell`.
   
   - A <a href="https://github.com/"> Github account </a>.
+  
+  - Visual Studio (Latest Version)
 
 `Step 0` : Create IAM user on AWS (preferably done in step 8)
 
@@ -41,58 +43,78 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 `Step 3` : Create a project useing serverless NodeJS starter with : `serverless install --url https://github.com/AnomalyInnovations/serverless-nodejs-starter --name xyz-app-api`
 
-** copy link b/w brakets change xxx after --name xxx-app-api
+ * ( `"xyz"` is the name of your project. For example, if your project name is facebook. You will name it `facebook-app-api` )
 
-`Step 4` : Move to your project with :  [ cd xxx-app-api ]
+`Step 4` : Move to your project in the command prompt :  `cd xyz-app-api`
 
-`Step 5` : Find your file and open it in a text editor (e.x. Visual Studio)
+`Step 5` : Find your project file and open it in a text editor (e.x. Visual Studio)
 
-`Note` : the directory should contain a handler.js and serverless.yml 
+`Note` : the directory should contain a `handler.js` and `serverless.yml`. 
 
 - handler.js : contains code to deploye to AWS Lambda.
 
 - serverless.yml : contains configuration for AWS server such as Congito, Lambda, DynamoDB, S3 bucket.
 
-`Step 6` : In directory install npm package with : [ npm install ]
+`Step 6` : In your project directory (command prompt) install npm package with : `npm install`
 
-`Step 7` : Install uuid and aws-sdk with : [  npm install aws-sdk --save-dev  ] and [ npm install uuid --save ] if needed for payments add [ npm install --save stripe ]
-Note:
+`Step 7` : Install uuid and aws-sdk with : `npm install aws-sdk --save-dev` and `npm install uuid --save` if you are developing a payement app, add `npm install --save stripe`
+
+`Note` : on aws-sdk and uuid
 
 - aws-sdk : allows to talk to the various AWS services.
 
 - uuid :  generates unique ids for DynamoDB.
 
-`Step 8` : Install amplify and configure it with : [ npm install  -g @aws-amplify/cli ] then [ amplify configure ]
-Configure amplify
-regrion: us-east-2 ;example / press Enter
-user name: IAM name (that you have created) / press Enter
-accessKeyId: IAM Access Key / press Enter
-secretAccessKey: IAM secret access Key / press Enter
-Profile Name: (default) / press Enter
+`Step 8` : Install amplify and configure it with : `npm install  -g @aws-amplify/cli` and `amplify configure`
 
-`Step 9` : Edit serverless.yml with structured data from note-app
-Do not change the service: name! copy and paste starting below it!
+### Configure amplify
 
-`Step 10` : Copy and Paste resources folder from note-app use s3-bucket.yml if needed
-Note: tests folders (in resources folder, and in root) are needed to set up payment only (Delete if not needed)
-Note: also delete billing-lib.js from libs folder when you delete tests folders
-- Delete stripeSecretKey from environment in serverless.yml
-- Delete billing from functions in serverless.yml
+`regrion`: us-east-2 ;example / press Enter
 
-`Step 11` : Copy and Paste libs folder 
-Note: mock folder is not needed as it is for tests only
+`user name` : IAM name (that you have created) / press Enter
 
-`Step 12` : Include the following files to the root folder: [ get.js, list.js, delete.js, update.js, create.js ]
-Make sure to edit: 
----- Table Names (xxx is the name you choose[product, services, ...] and yyy is the name of your website )
-   * tableName in custom : tableName in serverless.yml
-(ex. -yyy-xxxs)
-   * line 2 after Resources in resources folder dynamobd-table.yml 
-(ex. YyyTable)
-   * use the name above (ex. Yyy) in serverless.yml in provider -> Resourse -> "Fn:GetAtt":[ YyyTable, Arn ] 
----- User Pool Name
-  * UserPoolName in Resources -> Properties in cognito-user-pool.yml 
-(ex. -yyy-user-pool -> where yyy is your website name)
+`accessKeyId` : IAM Access Key / press Enter
+
+`secretAccessKey` : IAM secret access Key / press Enter
+
+`Profile Name` : (default) / press Enter
+
+`Step 9` : Edit `serverless.yml` with structured data from `note-app`
+
+`Note` : Do not change the `service: name`! copy and paste starting below it!
+
+`Step 10` : Copy and Paste resources folder from `note-app` use `s3-bucket.yml` if needed to store pictures, files, or document downloaded by users using your application
+
+`Note` : `tests` folders (in resources folder, and in root) are needed to set up payment only (Delete if not needed)
+
+`Note` : also delete `billing-lib.js` from `libs` folder when you delete `tests` folders
+
+- Delete `stripeSecretKey` from environment in `serverless.yml`
+
+- Delete `billing` from `functions` in `serverless.yml`
+
+`Step 11` : Copy and Paste `libs` folder 
+
+`Note` : `mock` folder is not needed as it is for `tests` file only
+
+`Step 12` : Include the following files to the root folder: `get.js`, `list.js`, `delete.js`, `update.js`, `create.js`
+
+### Make sure to edit: 
+
+* `Table Names` ( `vwx` is the name you choose if it's a products, services, posts, emails, ...] and `xyz` is the name of your project )
+
+`Note` : if your project is about emails then vwx is "emails", if it's about products then vwx is "products", ... etc
+
+   * `tableName` in `custom : tableName` in `serverless.yml` (ex. ${self:custom.stage}-`xyz`-`vwx`; ex. ${self:custom.stage}-`facebook`-`posts`)
+
+* line 2 after `Resources` in `resources folder`, `dynamobd-table.yml` ( ex. `Xyz`Table )
+   
+* use the name above ( ex. `Xyz` ) in `serverless.yml` in `provider` -> `Resourse` -> `"Fn:GetAtt":[ XyzTable, Arn ]` 
+
+* `User Pool Name`
+
+  * `UserPoolName` in `Resources` -> `Properties` in `cognito-user-pool.yml` (ex. -yyy-user-pool -> where yyy is your website name)
+  
   * ClientName  in Resources -> CognitoUserPoolClient -> Properites in cognito-user-pool.yml
 (ex. -yyy-user-pool-client -> where yyy is your website name)
 ---- Identity Pool Name 
