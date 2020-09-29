@@ -21,7 +21,7 @@ what you will need to do is set up your :
 
 To set up your backend follow the steps listed below to the "T." Do not skip steps!!! 
 
-`Note`: You will need : 
+- `Note`: You will need : 
 
   - A <a href="https://aws.amazon.com/"> AWS account </a>. Create a Root User.
   
@@ -39,7 +39,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 `Step 2` : If not already done, install serverless globaly with : `npm install serverless -g`
 
-`REF: https://serverless-stack.com/chapters/setup-the-serverless-framework.html`
+- `REF: https://serverless-stack.com/chapters/setup-the-serverless-framework.html`
 
 `Step 3` : Create a project useing serverless NodeJS starter with : `serverless install --url https://github.com/AnomalyInnovations/serverless-nodejs-starter --name xyz-app-api`
 
@@ -49,7 +49,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 `Step 5` : Find your project file and open it in a text editor (e.x. Visual Studio)
 
-`Note` : the directory should contain a `handler.js` and `serverless.yml`. 
+- `Note` : the directory should contain a `handler.js` and `serverless.yml`. 
 
 - handler.js : contains code to deploye to AWS Lambda.
 
@@ -59,7 +59,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 `Step 7` : Install uuid and aws-sdk with : `npm install aws-sdk --save-dev` and `npm install uuid --save` if you are developing a payement app, add `npm install --save stripe`
 
-`Note` : on aws-sdk and uuid
+- `Note` : on aws-sdk and uuid
 
 - aws-sdk : allows to talk to the various AWS services.
 
@@ -69,25 +69,25 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 ### Configure amplify
 
-`regrion`: us-east-2 ;example / press Enter
+- `regrion`: us-east-2 ;example / press Enter
 
-`user name` : IAM name (that you have created) / press Enter
+- `user name` : IAM name (that you have created) / press Enter
 
-`accessKeyId` : IAM Access Key / press Enter
+- `accessKeyId` : IAM Access Key / press Enter
 
-`secretAccessKey` : IAM secret access Key / press Enter
+- `secretAccessKey` : IAM secret access Key / press Enter
 
-`Profile Name` : (default) / press Enter
+- `Profile Name` : (default) / press Enter
 
 `Step 9` : Edit `serverless.yml` with structured data from `note-app`
 
-`Note` : Do not change the `service: name`! copy and paste starting below it!
+- `Note` : Do not change the `service: name`! copy and paste starting below it!
 
 `Step 10` : Copy and Paste resources folder from `note-app` use `s3-bucket.yml` if needed to store pictures, files, or document downloaded by users using your application
 
-`Note` : `tests` folders (in resources folder, and in root) are needed to set up payment only (Delete if not needed)
+- `Note` : `tests` folders (in resources folder, and in root) are needed to set up payment only (Delete if not needed)
 
-`Note` : also delete `billing-lib.js` from `libs` folder when you delete `tests` folders
+- `Note` : also delete `billing-lib.js` from `libs` folder when you delete `tests` folders
 
 - Delete `stripeSecretKey` from environment in `serverless.yml`
 
@@ -95,7 +95,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 `Step 11` : Copy and Paste `libs` folder 
 
-`Note` : `mock` folder is not needed as it is for `tests` file only
+- `Note` : `mock` folder is not needed as it is for `tests` file only
 
 `Step 12` : Include the following files to the root folder: `get.js`, `list.js`, `delete.js`, `update.js`, `create.js`
 
@@ -103,7 +103,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 * `Table Names` ( `vwx` is the name you choose if it's a products, services, posts, emails, ...] and `xyz` is the name of your project )
 
-`Note` : if your project is about emails then vwx is "emails", if it's about products then vwx is "products", ... etc
+- `Note` : if your project is about emails then vwx is "emails", if it's about products then vwx is "products", ... etc
 
    * `tableName` in `custom : tableName` in `serverless.yml` (ex. ${self:custom.stage}-`xyz`-`vwx`; ex. ${self:custom.stage}-`facebook`-`posts`)
 
