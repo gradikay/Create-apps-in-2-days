@@ -151,24 +151,51 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 ## Setting up your Frontend project folder
 
-SETTING UP FRONTEND
+- `Note` : You will need : 
 
-`Step 0` : Create a git repo cite-app-client
-`Step 1` :  Create react app with : [ npx create-react-app farmraf-app-client ]
-`Step 2` : Switch to project with : [ cd name-app-client  ] and [ npm start ]
-`Step 3` : Change App title in public ->index.html
-* :::: `Note` : to ignore Visual studio add [.vs] to gitignore file
+  - A <a href="https://netlify.com/"> Netlify account </a>. Create a Root User.
+  
+  - All codes need to be pasted in a `command prompt` or `Windows Powershell`.
+  
+  - A <a href="https://github.com/"> Github account </a>.
+  
+  - Visual Studio (Latest Version)
+
+`Step 0` : Create a git repo `xyz-app-client`
+
+  * ( `"xyz"` is the name of your project. For example, if your project name is facebook. You will name it `facebook-app-client` )
+
+`Step 1` :  Create react app with : `npx create-react-app xyz-app-client`
+
+`Step 2` : Switch to project with : `cd name-app-client` then `npm start`
+
+`Step 3` : Change App `title` in `public` folder -> `index.html`
+
+* :::: `Note` : to ignore Visual studio add `.vs` to `gitignore` file (this is important before pushing to Github)
+
 `Step 4` : Initialize with Github repo
-`Step 5` : Install Boostrap with : [ npm install react-bootstrap bootstrap --save ]
-`Step 6` : Place stylesheet in public -> index.html with : [ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> ]
-`Step 7` : Install react-router-dom with : [ npm install react-router-dom --save ]
-`Step 8` : Install react router bootstrap with : [ npm install react-router-bootstrap --save ]
-`Step 9` : Install aws amplify with : [ npm install aws-amplify --save ]
-`Step 10` : (if needed) Intall react stripe element with : [ npm install --save react-stripe-elements ]
-`Step 11` : (if needed) Include stripe script with : [ <script src="https://js.stripe.com/v3/"></script> ]  
-`Step 12` : Copy and paste all the skeleton code [components, containers, libs, app.js config.js, index.js and Routes.js] do not delete and paste the src file itself) template notes-app-client
-`Step 13` : Change all data (config.js)
-`Step 14` : Remove BillingForm.js, Setting.js and BillingForm.css, Setting.css and from components in :root Route.js remove import Setting  and corresponding Route
-`Step 14` : Initialize git 
+
+`Step 5` : Install Boostrap with : `npm install react-bootstrap bootstrap --save`
+
+`Step 6` : Place stylesheet in `public` folder -> `index.html` with : `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">`
+
+`Step 7` : Install react-router-dom with : `npm install react-router-dom --save`
+
+`Step 8` : Install react router bootstrap with : `npm install react-router-bootstrap --save`
+
+`Step 9` : Install aws amplify with : `npm install aws-amplify --save`
+
+`Step 10` : (if needed) Intall react stripe element with : `npm install --save react-stripe-elements`
+
+`Step 11` : (if needed) Include stripe script with : `<script src="https://js.stripe.com/v3/"></script>`  
+
+`Step 12` : Copy and paste all the skeleton code `components`, `containers`, `libs`, `app.js`, `config.js`, `index.js` and `Routes.js` do not delete and paste the `src` file itself) template `notes-app-client`
+
+`Step 13` : Change all data in `config.js`
+
+`Step 14` : Remove `BillingForm.js`, `Setting.js` and `BillingForm.css`, `Setting.css` and from components in :root folder `Route.js` remove import `Setting` and corresponding Routes
+
+`Step 14` : Initialize with git 
+
 `Step 15` : Commit
 
