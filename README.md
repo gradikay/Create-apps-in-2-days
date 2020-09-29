@@ -53,9 +53,9 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 `Step 5` : Find your project file and open it in a text editor (e.x. Visual Studio)
 
-- `Note` : the directory should contain a `handler.js` and `serverless.yml`. 
+- `Note` : The directory should contain a `handler.js` and `serverless.yml`. 
 
-  - handler.js : contains code to deploye to AWS Lambda.
+  - handler.js : contains code to deploy to AWS Lambda.
 
   - serverless.yml : contains configuration for AWS server such as Congito, Lambda, DynamoDB, S3 bucket.
 
@@ -73,7 +73,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 ### Configure amplify
 
-  - `regrion`: us-east-2 ;example / press Enter
+  - `regrion`: us-east-2 / press Enter (choose the region of your choice)
 
   - `user name` : IAM name (that you have created) / press Enter
 
@@ -87,7 +87,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 - `Note` : Do not change the `service: name`! copy and paste starting below it!
 
-`Step 10` : Copy and Paste resources folder from `note-app` use `s3-bucket.yml` if needed to store pictures, files, or document downloaded by users using your application
+`Step 10` : Copy and Paste resources folder from `note-app` use `s3-bucket.yml` if needed to store pictures, files, or documents downloaded by users using your application
 
 - `Note` : `tests` folders (in resources folder, and in root) are needed to set up payment only (Delete if not needed)
 
