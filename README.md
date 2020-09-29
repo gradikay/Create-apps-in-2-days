@@ -1,4 +1,4 @@
-# Create apps in 2 days
+# Create apps in 2 days (No complete yet! :))
 I have learned programming from many great people. I want to start sharing the knowledge I have aquired over the years to speed up my work.
 Here I will show you how I create real world app in only 2 days.
 
@@ -21,7 +21,7 @@ what you will need to do is set up your :
 
 To set up your backend follow the steps listed below to the "T." Do not skip steps!!! 
 
-- `Note`: You will need : 
+- `Note` : You will need : 
 
   - A <a href="https://aws.amazon.com/"> AWS account </a>. Create a Root User.
   
@@ -31,7 +31,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
   
   - Visual Studio (Latest Version)
 
-`Step 0` : Create IAM user on AWS (preferably done in step 8)
+`Step 0` : Create IAM user on AWS (preferably done in `step 8`)
 
 `Step 1` : Create a git repo : `xyz-app-api` 
 
