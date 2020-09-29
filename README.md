@@ -1,6 +1,6 @@
 # Create apps in 2 days (No complete yet! :))
-I have learned programming from many great people. I want to start sharing the knowledge I have aquired over the years to speed up my work.
-Here I will show you how I create real world app in only 2 days.
+
+How I am able to build projects in 2 days or less.
 
 I build my apps using Amazon (AWS), Amplify, Serverless, Reacts.js, Bootstrap, and npm.
 
