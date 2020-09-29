@@ -51,9 +51,9 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 - `Note` : the directory should contain a `handler.js` and `serverless.yml`. 
 
-- handler.js : contains code to deploye to AWS Lambda.
+  - handler.js : contains code to deploye to AWS Lambda.
 
-- serverless.yml : contains configuration for AWS server such as Congito, Lambda, DynamoDB, S3 bucket.
+  - serverless.yml : contains configuration for AWS server such as Congito, Lambda, DynamoDB, S3 bucket.
 
 `Step 6` : In your project directory (command prompt) install npm package with : `npm install`
 
@@ -61,23 +61,23 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 - `Note` : on aws-sdk and uuid
 
-- aws-sdk : allows to talk to the various AWS services.
+  - aws-sdk : allows to talk to the various AWS services.
 
-- uuid :  generates unique ids for DynamoDB.
+  - uuid :  generates unique ids for DynamoDB.
 
 `Step 8` : Install amplify and configure it with : `npm install  -g @aws-amplify/cli` and `amplify configure`
 
 ### Configure amplify
 
-- `regrion`: us-east-2 ;example / press Enter
+  - `regrion`: us-east-2 ;example / press Enter
 
-- `user name` : IAM name (that you have created) / press Enter
+  - `user name` : IAM name (that you have created) / press Enter
 
-- `accessKeyId` : IAM Access Key / press Enter
+  - `accessKeyId` : IAM Access Key / press Enter
 
-- `secretAccessKey` : IAM secret access Key / press Enter
+  - `secretAccessKey` : IAM secret access Key / press Enter
 
-- `Profile Name` : (default) / press Enter
+  - `Profile Name` : (default) / press Enter
 
 `Step 9` : Edit `serverless.yml` with structured data from `note-app`
 
@@ -89,9 +89,9 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 - `Note` : also delete `billing-lib.js` from `libs` folder when you delete `tests` folders
 
-- Delete `stripeSecretKey` from environment in `serverless.yml`
+  - Delete `stripeSecretKey` from environment in `serverless.yml`
 
-- Delete `billing` from `functions` in `serverless.yml`
+  - Delete `billing` from `functions` in `serverless.yml`
 
 `Step 11` : Copy and Paste `libs` folder 
 
@@ -105,7 +105,7 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 - `Note` : if your project is about emails then vwx is "emails", if it's about products then vwx is "products", ... etc
 
-   * `tableName` in `custom : tableName` in `serverless.yml` (ex. ${self:custom.stage}-`xyz`-`vwx`; ex. ${self:custom.stage}-`facebook`-`posts`)
+   * `tableName` in `custom : tableName` in `serverless.yml` ( ex. ${self:custom.stage}-`xyz`-`vwx`; ex. ${self:custom.stage}-`facebook`-`posts` )
 
 * line 2 after `Resources` in `resources folder`, `dynamobd-table.yml` ( ex. `Xyz`Table )
    
@@ -113,22 +113,33 @@ To set up your backend follow the steps listed below to the "T." Do not skip ste
 
 * `User Pool Name`
 
-  * `UserPoolName` in `Resources` -> `Properties` in `cognito-user-pool.yml` (ex. -yyy-user-pool -> where yyy is your website name)
+  * `UserPoolName` in `Resources` -> `Properties` in `cognito-user-pool.yml` ( ex. -`xyz`-user-pool -> where `xyz` is your project name; ex. -facebook-user-pool )
   
-  * ClientName  in Resources -> CognitoUserPoolClient -> Properites in cognito-user-pool.yml
-(ex. -yyy-user-pool-client -> where yyy is your website name)
----- Identity Pool Name 
-  * IdentityPoolName in Resources -> Properties in cognito-identity-pool.yml
-(ex. YyyIdentityPool -> where yyy is your website name)
--schema.
-Step 13: Deploy project with, use -v to display data: [ serverless deploy -v ]
-Note: use the following for a precise deployment : [ serverless deploy --stage $STAGE_NAME ]
-Note: When using Stripe, env:STRIP_SECRET_KEY will give you an error. Make sure you have billings.js file in your root
-Step 14: Run test with console provided identifications (dev and prod).
-Open sticky notes titled BACKEND TESTS and run the tests following the steps
-Step 15: Initialize with Github repo (go to github and copy and paste the code for initializing) for [...or push an existing re...]
-Step 16: commit your changes to the repo with : [ git add . ] [ git commit -am "my commit" ] [ git push ]
-Step 17: Set up backend with seed
-Optional: Add Stripe variable from the .env file
-Step 18: Run version control with : [ npm version patch ] and [ git push ] repeat for every deployment to sync with seed
-P.S. Run test with seed identifications (dev and prod) ::::: NOTE: console provided identifications has been override {do not use it anymore replace all creditential with seed's}
+  * `ClientName`  in `Resources` -> `CognitoUserPoolClient` -> `Properites` in `cognito-user-pool.yml` ( ex. -`xyz`-user-pool-client -> where `xyz` is your project name )
+  
+* `Identity Pool Name` 
+
+  * `IdentityPoolName` in `Resources` -> `Properties` in `cognito-identity-pool.yml` ( ex. XyzIdentityPool -> where xyz is your project name )
+
+`Step 13` : Deploy project with, use `-v` to display data: `serverless deploy -v`
+
+* `Note` : use the following for a precise deployment : `serverless deploy --stage $STAGE_NAME`
+
+* `Note` : When using Stripe, `env:STRIP_SECRET_KEY` will give you an error. Make sure you have `billings.js` file in your root
+
+`Step 14` : Run tests with console provided identifications ( dev and prod ).
+
+* `Note` : see BACKEND TESTS bellow for this step, do not skip!
+
+`Step 15` : Initialize with Github repo ( go to github and copy and paste the code for initializing )
+
+`Step 16` : commit your changes to the repo with : `git add .` then `git commit -am "my commit"` then `git push`
+
+`Step 17`: Set up backend with `seed`
+
+* `Optional` : Add Stripe variable to the the `.env` file
+
+`Step 18` : Run version control with : `npm version patch` then `git push` repeat for every deployment to sync with seed
+
+* `P.S.` Run test with seed identifications (dev and prod) 
+* ::::: `NOTE` : console provided identifications has been overrided {do not use it anymore replace all creditential with seed's}
